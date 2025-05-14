@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Video Library - MN Stream</title>
+  <meta name="description" content="Publicly available video playlist from MN Stream. Watch freely.">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🎞️ Video Library</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="videos.html">Videos</a>
+      <a href="ddl.html">DDL Player</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="video-grid">
+      <!-- Repeat for each video -->
+      <div class="video-card">
+        <iframe src="https://watch.cloudflarestream.com/YOUR_STREAM_ID" allowfullscreen frameborder="0"></iframe>
+        <h3>Video Title</h3>
+        <p>Short description of the video.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 MN Stream</p>
+  </footer>
+</body>
+</html>
