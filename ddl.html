@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Play Direct Video Link - MN Stream</title>
+  <meta name="description" content="Paste any direct video link (DDL) and play it instantly.">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🎥 DDL Player</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="videos.html">Videos</a>
+      <a href="ddl.html">DDL Player</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Paste a Direct Video Link (MP4/WebM)</h2>
+      <input type="text" id="videoUrl" placeholder="https://example.com/video.mp4" />
+      <button onclick="playVideo()">▶️ Play</button>
+    </section>
+
+    <section class="video-container" id="videoContainer" style="display:none;">
+      <video id="videoPlayer" controls width="100%">
+        <source id="videoSource" src="" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </section>
+
+    <p style="margin-top:2rem; color: gray;">
+      ⚠️ Make sure the link supports CORS & HTTP Range.
+    </p>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 MN Stream</p>
+  </footer>
+
+  <script>
+    function playVideo() {
+      const url = document.getElementById('videoUrl').value.trim();
+      if (!url.startsWith("http")) return alert("Please enter a valid URL.");
+      const videoSource = document.getElementById('videoSource');
+      videoSource.src = url;
+      document.getElementById('videoPlayer').load();
+      document.getElementById('videoContainer').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
